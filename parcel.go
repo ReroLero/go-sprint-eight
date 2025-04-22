@@ -26,7 +26,6 @@ func (s ParcelStore) Add(p Parcel) (int, error) {
 	if err != nil {
 		return 0, err
 	}
-
 	return int(id), nil
 }
 
@@ -37,7 +36,6 @@ func (s ParcelStore) Get(number int) (Parcel, error) {
 	if err != nil {
 		return p, err
 	}
-
 	return p, nil
 }
 
@@ -61,7 +59,6 @@ func (s ParcelStore) GetByClient(client int) ([]Parcel, error) {
 	if err := rows.Err(); err != nil {
 		return nil, err
 	}
-
 	return res, nil
 }
 
@@ -87,7 +84,6 @@ func (s ParcelStore) SetAddress(number int, address string) error {
 	if rowsAffected == 0 {
 		return errors.New("can't change address for non-registered parcel")
 	}
-
 	return nil
 }
 
@@ -108,6 +104,5 @@ func (s ParcelStore) Delete(number int) error {
 	if rowsAffected == 0 {
 		return errors.New("can't delete non-registered parcel")
 	}
-
 	return nil
 }

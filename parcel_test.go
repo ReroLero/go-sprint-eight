@@ -54,7 +54,6 @@ func TestAddGetDelete(t *testing.T) {
 	// delete
 	err = store.Delete(id)
 	require.NoError(t, err)
-
 	_, err = store.Get(id)
 	require.Error(t, err)
 }
